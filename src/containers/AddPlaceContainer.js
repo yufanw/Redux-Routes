@@ -4,21 +4,21 @@ import * as actions from '../actions/placeActions'
 
 class AddPlaceContainer extends React.Component {
 
-    constructor(props) {
-        super(props);
-    };
+  constructor(props) {
+    super(props);
+  };
 
-    render = () => {
+  render = () => {
 
-        return (
-            <AddPlace handleAddPlace={this.handleAddPlace}/>
-        );
-    };
+    return (
+      <AddPlace handleAddPlace={this.handleAddPlace} />
+    );
+  };
 
-    handleAddPlace = (placeName) => {
-        const action = actions.addPlace(placeName);
-        this.props.store.dispatch(action);
-    };
+  handleAddPlace = (placeName) => {
+    const action = actions.addPlace(placeName);
+    this.props.store.dispatch(action);
+  };
 }
 
 export default AddPlaceContainer;

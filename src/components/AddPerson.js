@@ -1,93 +1,93 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Button, FormGroup, FormControl} from 'react-bootstrap';
+import { Button, FormGroup, FormControl } from 'react-bootstrap';
 
 class AddPerson extends React.Component {
 
-    constructor(props) {
-        super(props);
+  constructor(props) {
+    super(props);
 
-        this.state = {
-            newFirstName: '',
-            newLastName: '',
-            newOccupation: ''
-        }
+    this.state = {
+      newFirstName: '',
+      newLastName: '',
+      newOccupation: ''
+    }
+  };
+
+  render = () => {
+
+    let inputStyle = {
+      align: 'left',
+      width: 200,
+      display: 'inline-block'
     };
 
-    render = () => {
+    return (
+      <div align="left">
 
-        let inputStyle = {
-            align: 'left',
-            width: 200,
-            display: 'inline-block'
-        };
+        <FormGroup>
+          <FormControl
+            style={inputStyle}
+            type="text"
+            placeholder="First Name"
+            value={this.state.newFirstName}
+            onChange={this.onFirstNameChange}
 
-        return (
-            <div align="left">
+          />
+          {' '}
+          <FormControl
+            style={inputStyle}
+            type="text"
+            placeholder="Last Name"
+            value={this.state.newLastName}
+            onChange={this.onLastNameChange}
+          />
+          {' '}
+          <FormControl
+            style={inputStyle}
+            type="text"
+            placeholder="Occupation"
+            value={this.state.newOccupation}
+            onChange={this.onOccupationChange}
+          />
+          {' '}
+          <Button onClick={this.onSubmitNewPerson}>Add Person</Button>
+        </FormGroup>
 
-                <FormGroup>
-                    <FormControl
-                        style={inputStyle}
-                        type="text"
-                        placeholder="First Name"
-                        value={this.state.newFirstName}
-                        onChange={this.onFirstNameChange}
+      </div>
+    );
+  };
 
-                    />
-                    {' '}
-                    <FormControl
-                        style={inputStyle}
-                        type="text"
-                        placeholder="Last Name"
-                        value={this.state.newLastName}
-                        onChange={this.onLastNameChange}
-                    />
-                    {' '}
-                    <FormControl
-                        style={inputStyle}
-                        type="text"
-                        placeholder="Occupation"
-                        value={this.state.newOccupation}
-                        onChange={this.onOccupationChange}
-                    />
-                    {' '}
-                    <Button onClick={this.onSubmitNewPerson}>Add Person</Button>
-                </FormGroup>
+  onFirstNameChange = (e) => {
+    this.setState({
+      newFirstName: e.target.value
+    });
+  };
 
-            </div>
-        );
-    };
+  onLastNameChange = (e) => {
+    this.setState({
+      newLastName: e.target.value
+    });
+  };
 
-    onFirstNameChange = (e) => {
-        this.setState({
-            newFirstName: e.target.value
-        });
-    };
+  onOccupationChange = (e) => {
+    this.setState({
+      newOccupation: e.target.value
+    });
+  };
 
-    onLastNameChange = (e) => {
-        this.setState({
-            newLastName: e.target.value
-        });
-    };
-
-    onOccupationChange = (e) => {
-        this.setState({
-            newOccupation: e.target.value
-        });
-    };
-
-    onSubmitNewPerson = (e) => {
-        this.props.handleAddPerson(this.state.newFirstName, this.state.newLastName, this.state.newOccupation);
-        this.setState({
-            newFirstName: '',
-            newLastName: '',
-            newOccupation: ''
-        })
-    };
+  onSubmitNewPerson = (e) => {
+    this.props.handleAddPerson(this.state.newFirstName, this.state.newLastName, this.state.newOccupation);
+    this.setState({
+      newFirstName: '',
+      newLastName: '',
+      newOccupation: ''
+    })
+  };
 }
 
 AddPerson.PropTypes = {
-    handleAddPerson: PropTypes.func.required
+  handleAddPerson: PropTypes.func.required
 };
 
 export default AddPerson;

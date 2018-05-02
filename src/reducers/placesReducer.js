@@ -2,21 +2,21 @@ import * as TYPES from '../actions/actionTypes';
 
 function placesReducer(state = [], action) {
 
-    switch (action.type) {
+  switch (action.type) {
 
-        case TYPES.DELETE_PLACE:
+    case TYPES.DELETE_PLACE:
 
-            return state.filter(place => place.name !== action.name);
+      return state.filter(place => place.name !== action.name);
 
-        case TYPES.ADD_PLACE:
+    case TYPES.ADD_PLACE:
 
-            const place = { name: action.name };
+      const place = { name: action.name };
 
-            return state.concat(place);
+      return state.concat(place);
 
-        default:
-            return state;
-    }
+    default:
+      return state;
+  }
 
 }
 

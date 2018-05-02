@@ -3,20 +3,20 @@ import PropTypes from 'prop-types';
 import { Button } from 'react-bootstrap'
 
 
-let Place = ({index, name, handleDelete}) => {
+let Place = ({ index, name, handleDelete }) => {
 
-    return (
-        <tr key={index}>
-            <td>{name}</td>
-            <td><Button onClick={e => handleDelete(e, name)}>Delete</Button></td>
-        </tr>
-    )
+  return (
+    <tr key={index}>
+      <td>{name}</td>
+      <td><Button onClick={e => handleDelete(e, name)}>Delete</Button></td>
+    </tr>
+  )
 };
 
 
 Place.PropTypes = {
-    name: PropTypes.string.isRequired,
-    handleDelete: PropTypes.func.isRequired
+  name: PropTypes.string.isRequired,
+  handleDelete: PropTypes.func.isRequired
 };
 
 export default Place;

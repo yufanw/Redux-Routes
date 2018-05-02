@@ -4,21 +4,21 @@ import * as actions from "../actions/personActions";
 
 class AddPersonContainer extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
+  constructor(props) {
+    super(props);
+  }
 
-    render = () => {
+  render = () => {
 
-        return (
-            <AddPerson handleAddPerson={this.handleAddNewPerson}/>
-        );
-    };
+    return (
+      <AddPerson handleAddPerson={this.handleAddNewPerson} />
+    );
+  };
 
-    handleAddNewPerson = (firstName, lastName, occupation) => {
-        let action = actions.addPerson(firstName, lastName, occupation);
-        this.props.store.dispatch(action);
-    };
+  handleAddNewPerson = (firstName, lastName, occupation) => {
+    let action = actions.addPerson(firstName, lastName, occupation);
+    this.props.store.dispatch(action);
+  };
 }
 
 export default AddPersonContainer;
