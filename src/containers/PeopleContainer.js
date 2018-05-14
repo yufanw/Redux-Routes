@@ -6,13 +6,8 @@ import AddPersonContainer from './AddPersonContainer';
 import PropTypes from 'prop-types';
 
 class PeopleContainer extends React.Component {
-
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      people: []
-    }
+  state = {
+    people: []
   }
 
   componentWillMount = () => {

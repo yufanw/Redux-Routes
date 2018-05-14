@@ -7,13 +7,8 @@ import AddPlaceContainer from './AddPlaceContainer';
 
 
 class PlacesContainer extends React.Component {
-
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      places: []
-    }
+  state = {
+    places: []
   }
 
   componentWillMount = () => {
